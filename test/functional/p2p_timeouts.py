@@ -39,7 +39,7 @@ class TimeoutsTest(BitcoinTestFramework):
         self.setup_clean_chain = True
         self.num_nodes = 1
         # set timeout to receive version/verack to 3 seconds
-        self.extra_args = [["-peertimeout=3"]]
+        self.extra_args = [["-delaytimeout=3"]]
 
     def run_test(self):
         # Setup the p2p connections

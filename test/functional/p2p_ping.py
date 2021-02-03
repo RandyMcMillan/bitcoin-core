@@ -34,7 +34,7 @@ class PingPongTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
-        self.extra_args = [['-peertimeout=3']]
+        self.extra_args = [['-delaytimeout=3']]
 
     def check_peer_info(self, *, pingtime, minping, pingwait):
         stats = self.nodes[0].getpeerinfo()[0]
@@ -111,7 +111,7 @@ class PingPongTest(BitcoinTestFramework):
         no_pong_node.wait_until(lambda: 'ping' in no_pong_node.last_message)
         with self.nodes[0].assert_debug_log(['ping timeout: 1201.000000s']):
             self.mock_forward(20 * 60 + 1)
-            time.sleep(4)  # peertimeout + 1
+            time.sleep(4)  # delaytimeout + 1
 
 
 if __name__ == '__main__':
