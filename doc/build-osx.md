@@ -141,6 +141,14 @@ brew install qt@5
 Note: Building with Qt binaries downloaded from the Qt website is not officially supported.
 See the notes in [#7714](https://github.com/bitcoin/bitcoin/issues/7714).
 
+Note: Ensure that the `qt@5` package is installed, not the `qt` package.
+If 'qt' is installed, the build process will fail.
+if installed, remove the `qt` package with the following command:
+
+``` bash
+brew uninstall qt
+```
+
 ###### qrencode
 
 The GUI can encode addresses in a QR Code. To build in QR support for the GUI, install `qrencode`.
