@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #ENV VARS
+#TEST
 OS=$(uname)
 OS_VERSION=$(uname -r)
 UNAME_M=$(uname -m)
