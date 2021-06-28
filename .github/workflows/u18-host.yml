@@ -36,23 +36,23 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin
-          key: ${{ runner.os }}-top-star-${{ hashFiles('**/**') }}
+            ${{ github.workspace }}/bitcoin
+          key: ${{ runner.os }}-top-star-#${{ hashFiles('**/**') }}
           restore-keys: |
             ${{ runner.os }}-top-start
 
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin
-          key: ${{ runner.os }}-db4-tar-${{ hashFiles('**/tar.gz') }}
+            ${{ github.workspace }}/bitcoin
+          key: ${{ runner.os }}-db4-tar-#${{ hashFiles('**/tar.gz') }}
           restore-keys: |
             ${{ runner.os }}-db4-tar
 
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin
+            ${{ github.workspace }}/bitcoin
           key: ${{ runner.os }}-tar-${{ hashFiles('**/tar**') }}
           restore-keys: |
             ${{ runner.os }}-tar
@@ -60,7 +60,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin/db4
+            ${{ github.workspace }}/bitcoin/db4
           key: ${{ runner.os }}-db4-${{ hashFiles('**') }}
           restore-keys: |
             ${{ runner.os }}-db4-
@@ -68,7 +68,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin/depends/sources
+            ${{ github.workspace }}/bitcoin/sources
           key: ${{ runner.os }}-depends-source-${{ hashFiles('**/**') }}
           restore-keys: |
             ${{ runner.os }}-depends-
@@ -76,7 +76,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin/src/secp256k1
+            ${{ github.workspace }}/bitcoin/secp256k1
           key: ${{ runner.os }}-secp256k1-${{ hashFiles('**/**') }}
           restore-keys: |
             ${{ runner.os }}-secp256k1-
@@ -85,7 +85,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin/src
+            ${{ github.workspace }}/bitcoin/src
           key: ${{ runner.os }}-libzmq-${{ hashFiles('**/*zmq*') }}
           restore-keys: |
             ${{ runner.os }}-libzmq-
