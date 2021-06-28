@@ -32,6 +32,13 @@ jobs:
       - uses: styfle/cancel-workflow-action@0.8.0
         with:
           access_token: ${{ github.token }}
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/bitcoin/db4
+            ~/bitcoin/db4/bin
+            target/
+          key: ${{ runner.os }}-db4-${{ hashFiles('**/db_*') }}
       - uses: actions/checkout@v2
       - name: Make
         run: |
