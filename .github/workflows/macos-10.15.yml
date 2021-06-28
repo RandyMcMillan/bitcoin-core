@@ -6,6 +6,9 @@ name: macos-10.15
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
+    paths:
+      - '${{ github.workspace }}/bitcoin/.github/workflows/macos-10.15.yml'
+      - '${{ github.workspace }}/bitcoin/.github/workflows/install*.sh'
     branches:       #[ master ]
       - '*'         # matches every branch that doesn't contain a '/'
       - '*/*'       # matches every branch containing a single '/'

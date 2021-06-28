@@ -6,6 +6,10 @@ name: macos-latest
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
+    paths:
+      - '${{ github.workspace }}/bitcoin/.github/workflows/macos-latest.yml'
+      - '${{ github.workspace }}/bitcoin/.github/workflows/install*'
+        
     branches:       #[ master ]
       - '*'         # matches every branch that doesn't contain a '/'
       - '*/*'       # matches every branch containing a single '/'
