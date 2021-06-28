@@ -40,3 +40,5 @@ jobs:
           sudo apt install curl bash
           /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/RandyMcMillan/bitcoin/randymcmillan-deliverables/.github/workflows/install-qt5.sh)"
           /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/RandyMcMillan/bitcoin/randymcmillan-deliverables/.github/workflows/install-bitcoin-libs.sh)"
+          /bin bash -c "${{ github.workspace }}/bitcoin/.github/workflows/install-qt.sh"
+          /bin bash -c "${{ github.workspace }}/bitcoin/.github/workflows/install-bitcoin-libs.sh"
