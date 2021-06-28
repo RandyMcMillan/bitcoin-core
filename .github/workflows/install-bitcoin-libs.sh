@@ -36,7 +36,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     checkbrew
-
+    #test workflow
+    #test workflow
     git clone https://github.com/randymcmillan/bitcoin ~/bitcoin
     cd ~/bitcoin && git checkout randymcmillan-deliverables
     ./contrib/install_db4.sh .

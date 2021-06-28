@@ -6,8 +6,8 @@ name: u-18.04-host-curl
 on:
   push:
     paths:
-      - '${{ github.workspace }}/bitcoin/.github/workflows/u18-host-curl.yml'
-      - '${{ github.workspace }}/bitcoin/.github/workflows/install*'
+      - '.github/workflows/u18-host-curl.yml'
+      - '.github/workflows/install*'
         
     branches:       #[ master ]
       - '*'         # matches every branch that doesn't contain a '/'
@@ -40,5 +40,3 @@ jobs:
           sudo apt install curl bash
           /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/RandyMcMillan/bitcoin/randymcmillan-deliverables/.github/workflows/install-qt5.sh)"
           /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/RandyMcMillan/bitcoin/randymcmillan-deliverables/.github/workflows/install-bitcoin-libs.sh)"
-          /bin bash -c "${{ github.workspace }}/bitcoin/.github/workflows/install-qt.sh"
-          /bin bash -c "${{ github.workspace }}/bitcoin/.github/workflows/install-bitcoin-libs.sh"
