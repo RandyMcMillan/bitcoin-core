@@ -54,6 +54,15 @@ jobs:
           key: ${{ runner.os }}-secp256k1-${{ hashFiles('**/lib*.la') }}
           restore-keys: |
             ${{ runner.os }}-secp256k1-
+
+#src/src_libzmq_la-ipc_listener.lo
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/bitcoin/src
+          key: ${{ runner.os }}-libzqm-${{ hashFiles('**/lib*.l') }}
+          restore-keys: |
+            ${{ runner.os }}-libzmq-
       - uses: actions/checkout@v2
       - name: Make
         run: |
