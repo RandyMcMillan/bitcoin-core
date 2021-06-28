@@ -37,8 +37,9 @@ jobs:
           path: |
             ~/bitcoin/db4
             ~/bitcoin/db4/bin
-            target/
           key: ${{ runner.os }}-db4-${{ hashFiles('**/db_*') }}
+          restore-keys: |
+            ${{ runner.os }}-db4-
       - uses: actions/checkout@v2
       - name: Make
         run: |
