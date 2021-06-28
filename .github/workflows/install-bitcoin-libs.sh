@@ -29,16 +29,18 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
     sudo apt-get install libqrencode-dev
 
-    git clone https://github.com/bitcoin/bitcoin ~/bitcoin
-    cd ~/bitcoin && ./contrib/install_db4.sh .
-    ./autogen.sh && ./configure --without-bdb && sudo make install
+    git clone https://github.com/randymcmillan/bitcoin ~/bitcoin
+    cd ~/bitcoin && git checkout randymcmillan-deliverables
+    ./contrib/install_db4.sh .
+    ./autogen.sh && ./configure --disable-wallet && sudo make install
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     checkbrew
 
-    git clone https://github.com/bitcoin/bitcoin ~/bitcoin
-    cd ~/bitcoin && ./contrib/install_db4.sh .
-    ./autogen.sh && ./configure --without-bdb && sudo make install
+    git clone https://github.com/randymcmillan/bitcoin ~/bitcoin
+    cd ~/bitcoin && git checkout randymcmillan-deliverables
+    ./contrib/install_db4.sh .
+    ./autogen.sh && ./configure --disable-wallet && sudo make install
 
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo TODO add support for $OSTYPE
