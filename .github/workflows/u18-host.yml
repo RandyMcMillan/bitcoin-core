@@ -40,6 +40,13 @@ jobs:
           key: ${{ runner.os }}-db4-${{ hashFiles('**/db_*') }}
           restore-keys: |
             ${{ runner.os }}-db4-
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/bitcoin/src
+          key: ${{ runner.os }}-libbitcoin-${{ hashFiles('**/libbitcoin_*.o') }}
+          restore-keys: |
+            ${{ runner.os }}-libbitcoin-
       - uses: actions/checkout@v2
       - name: Make
         run: |
