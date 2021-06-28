@@ -36,16 +36,16 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ~/bitcoin/db-4.8.30.NC.tar.gz
-          key: ${{ runner.os }}-db4-${{ hashFiles('db-4.8.30.NC.tar.gz') }}
+            ~/bitcoin
+          key: ${{ runner.os }}-db4-tar-${{ hashFiles('**/tar.gz') }}
           restore-keys: |
-            ${{ runner.os }}-db-4.8.30.NC.tar.gz
+            ${{ runner.os }}-db4-tar
 
       - uses: actions/cache@v2
         with:
           path: |
             ~/bitcoin/db4
-          key: ${{ runner.os }}-db4-${{ hashFiles('**/**') }}
+          key: ${{ runner.os }}-db4-${{ hashFiles('**') }}
           restore-keys: |
             ${{ runner.os }}-db4-
 
@@ -61,7 +61,7 @@ jobs:
         with:
           path: |
             ~/bitcoin/src/secp256k1
-          key: ${{ runner.os }}-secp256k1-${{ hashFiles('**/**') }}
+          key: ${{ runner.os }}-secp256k1-${{ hashFiles('**') }}
           restore-keys: |
             ${{ runner.os }}-secp256k1-
 
@@ -70,7 +70,7 @@ jobs:
         with:
           path: |
             ~/bitcoin/src
-          key: ${{ runner.os }}-libzmq-${{ hashFiles('**/zmq*') }}
+          key: ${{ runner.os }}-libzmq-${{ hashFiles('*zmq*') }}
           restore-keys: |
             ${{ runner.os }}-libzmq-
       - uses: actions/checkout@v2
