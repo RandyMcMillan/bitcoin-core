@@ -41,7 +41,7 @@ jobs:
          ./autogen.sh
          ./configure --disable-wallet --disable-tests --disable-bench --disable-docs #--prefix=$PWD/depends/arm-linux-gnueabihf --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++
          make
-         make install
+         sudo make install
 
   macos-latest-curl:
     runs-on: macos-latest
