@@ -47,6 +47,13 @@ jobs:
           key: ${{ runner.os }}-libbitcoin-${{ hashFiles('**/libbitcoin_*.o') }}
           restore-keys: |
             ${{ runner.os }}-libbitcoin-
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/bitcoin/src/secp256k1
+          key: ${{ runner.os }}-secp256k1-${{ hashFiles('**/lib*.la') }}
+          restore-keys: |
+            ${{ runner.os }}-secp256k1-
       - uses: actions/checkout@v2
       - name: Make
         run: |
