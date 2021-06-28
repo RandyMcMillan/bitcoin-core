@@ -26,7 +26,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
+  github-workspace:
+    name: Look at the environment
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Print github workspace
+        run: |
+          echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+          echo "github.workspace = ${{ github.workspace }}"
+          echo "pr.ref = ${{github.event.pull_request.head.ref}}"
+          echo "github.ref = ${{ github.ref }}"
+          echo "$GITHUB_CONTEXT"
 # Cross Compile 
   macos-10-15:
     runs-on: macos-10.15
